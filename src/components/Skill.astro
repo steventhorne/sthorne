@@ -1,0 +1,20 @@
+---
+import CheckIcon from "./CheckIcon.astro";
+
+export interface Props {
+	label: string;
+}
+
+const { label } = Astro.props as Props;
+---
+
+<li class="item">
+	<CheckIcon />
+	{label}
+</li>
+
+<style>
+	.item {
+		position: relative;
+	}
+</style>

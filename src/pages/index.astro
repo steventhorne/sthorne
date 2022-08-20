@@ -1,0 +1,87 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SkillList from "../components/SkillList.astro";
+
+const skillList = [
+	{
+		name: "Languages & Runtimes",
+		skills: [
+			"C#",
+			"TypeScript, JavaScript, Node.js",
+			"MS SQL, PostgreSQL, MySQL",
+		],
+	},
+	{
+		name: "Frameworks & Libraries",
+		skills: [
+			".NET Framework, .NET Core, .NET 6",
+			"Angular, AngularJS",
+			"Entity Framework",
+		],
+	},
+	{
+		name: "IDEs & Engines",
+		skills: [
+			"Visual Studio",
+			"Visual Studio Code",
+			"SQL Server Management Studio",
+			"DataGrip",
+			"Vim, Neovim",
+			"Unity Game Engine",
+		],
+	},
+	{
+		name: "Other Tools & Services",
+		skills: [
+			"Git",
+			"Microsoft Azure",
+			"Team Foundation Server",
+			"Perforce",
+		],
+	},
+];
+---
+
+<Layout>
+	<p class="copy">
+		I am a senior programmer at <a
+			class="copy-link"
+			href="https://www.writable.com/"
+			title="Writable, Inc."
+			target="_blank"
+			rel="noopener noreferrer nofollow"
+			>Writable, Inc.
+		</a> where I work on education technology products.
+	</p>
+	<p class="copy">
+		I am proficient and most experienced with the following tools, though I am
+		familiar with others and learn new ones very quickly.
+	</p>
+	<div class="skill-section">
+		<SkillList title={skillList[0].name} skills={skillList[0].skills} />
+		<SkillList title={skillList[1].name} skills={skillList[1].skills} />
+	</div>
+	<div class="skill-section">
+		<SkillList title={skillList[2].name} skills={skillList[2].skills} />
+		<SkillList title={skillList[3].name} skills={skillList[3].skills} />
+	</div>
+</Layout>
+
+<style>
+	.copy {
+		margin-bottom: 1.5rem;
+	}
+
+	.copy-link {
+		color: rgba(66,153,225,1);
+		font-weight: 700;
+	}
+
+	.skill-section {
+		display: flex;
+	}
+
+	.skill-section:not(:last-child) {
+		margin-bottom: 2.5rem;
+	}
+</style>
