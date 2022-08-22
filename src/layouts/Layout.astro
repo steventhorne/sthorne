@@ -7,7 +7,8 @@ export interface Props {
 }
 
 const { title } = Astro.props as Props;
-const cssUrl = "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Roboto:wght@400;700&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz6%26&display=swap";
+const cssUrl =
+	"https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Roboto:wght@400;700&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz6%26&display=swap";
 ---
 
 <!DOCTYPE html>
@@ -52,24 +53,17 @@ const cssUrl = "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&fami
 
 		<meta name="generator" content={Astro.generator} />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com/" />
-		<link
-			rel="preload"
-			as="style"
-			href={cssUrl}
-		/>
-		<link
-			rel="stylesheet"
-			href={cssUrl}
-			media="all"
-			onload="this.media='all'"
+		<link rel="preconnect" href="https://fonts.gstatic.com/" />
+		<link rel="preload" as="style" href={cssUrl} />
+		<link rel="stylesheet" href={cssUrl} media="all" onload="this.media='all'"
 		/>
 		<noscript>
-			<link
-				rel="stylesheet"
-				href={cssUrl}
-			/>
+			<link rel="stylesheet" href={cssUrl} />
 		</noscript>
+
+		<!-- prevent favicon request -->
+		<link rel="icon" href="data:," />
+
 		<link href="https://www.sthorne.dev/" rel="canonical" />
 	</head>
 	<body>
